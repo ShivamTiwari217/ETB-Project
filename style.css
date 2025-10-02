@@ -61,12 +61,19 @@ a {
     color: var(--color-accent-orange);
 }
 
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap; /* Ensure navigation wraps on small screens */
+    justify-content: flex-end;
+}
+
 .navbar a {
     color: var(--color-secondary-text);
     margin-left: 25px;
     padding: 8px 0;
     font-weight: 600;
     position: relative;
+    white-space: nowrap; /* Prevent nav links from breaking */
 }
 
 .navbar a::after {
@@ -135,10 +142,159 @@ footer {
 }
 
 /* ---------------------------------------------------------------------- */
-/* --- NEW PAGE SPECIFIC STYLES --- */
+/* --- HOMEPAGE SPECIFIC STYLES --- */
 /* ---------------------------------------------------------------------- */
 
-/* --- General Page Layout --- */
+.hero-section {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-dark-bg) 0%, #001A33 100%);
+    border-bottom: 5px solid var(--color-accent-blue);
+}
+
+.hero-content {
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-section h1 {
+    font-size: 4.5em;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    color: var(--color-primary-text);
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+.tagline {
+    font-size: 1.5em;
+    color: var(--color-accent-orange);
+    margin-bottom: 40px;
+}
+
+.featured-analysis {
+    padding: 80px 5%;
+    background-color: var(--color-dark-bg);
+    text-align: center;
+}
+
+.feature-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-accent-orange);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.category-tag {
+    display: inline-block;
+    background-color: var(--color-accent-blue);
+    color: var(--color-dark-bg);
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--color-primary-text);
+}
+
+.data-points {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    color: var(--color-accent-orange);
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.data-points i {
+    margin-right: 5px;
+    color: var(--color-accent-blue);
+}
+
+.quick-links {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: #0d1218;
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.link-card {
+    background-color: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 191, 255, 0.2);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.link-card:hover {
+    border-color: var(--color-accent-orange);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
+}
+
+.link-card i {
+    font-size: 3em;
+    color: var(--color-accent-orange);
+    margin-bottom: 15px;
+}
+
+.link-card h3 {
+    color: var(--color-primary-text);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.cta-strip {
+    padding: 60px 5%;
+    background-color: var(--color-accent-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    color: var(--color-dark-bg);
+}
+
+.cta-strip p {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.subscribe-btn {
+    background-color: var(--color-dark-bg);
+    color: var(--color-accent-orange);
+    box-shadow: none;
+}
+
+.subscribe-btn:hover {
+    background-color: #28303C;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- SUB-PAGE GENERAL STYLES --- */
+/* ---------------------------------------------------------------------- */
+
 .page-content {
     padding-top: 100px;
     padding-bottom: 80px;
@@ -193,8 +349,9 @@ footer {
     color: var(--color-accent-orange);
 }
 
-/* --- Match Analysis Page Styles --- */
-.match-list-grid, .comparison-cards-grid, .routine-grid {
+
+/* --- Match Analysis Page Specific Styles --- */
+.match-list-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
@@ -242,7 +399,7 @@ footer {
 }
 
 /* --- Playbook/Set-Piece Shared Styles --- */
-.formation-cards-grid {
+.formation-cards-grid, .routine-grid, .comparison-cards-grid, .glossary-grid, .course-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
@@ -312,6 +469,11 @@ footer {
     border: 2px dashed var(--color-accent-blue);
     border-radius: 50%;
     color: var(--color-secondary-text);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .comparison-card {
@@ -370,12 +532,6 @@ footer {
 }
 
 /* --- Learning Hub Styles --- */
-.glossary-grid, .course-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-}
-
 .glossary-term, .course-card {
     background-color: #141A23;
     padding: 25px;
@@ -394,16 +550,64 @@ footer {
     display: block;
 }
 
-/* --- Responsive Design (Keep existing from index.html) --- */
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 1024px) {
-    .match-list-grid, .comparison-cards-grid, .routine-grid, .formation-cards-grid, .glossary-grid, .course-list, .profile-layout {
+    .match-list-grid, .comparison-cards-grid, .routine-grid, .formation-cards-grid, .glossary-grid, .course-list {
         grid-template-columns: 1fr;
     }
     .profile-layout {
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 }
 
 @media (max-width: 768px) {
-    /* ... (Responsive styles for navbar, h1, etc.) ... */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+    .navbar nav {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar a {
+        margin: 5px 10px;
+        font-size: 0.9em;
+    }
+    .hero-section h1 {
+        font-size: 3em;
+        letter-spacing: 3px;
+    }
+    .tagline {
+        font-size: 1.2em;
+    }
+    .cta-strip {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .cta-strip p {
+        font-size: 1.3em;
+    }
+    .page-content h1 {
+        font-size: 2.2em;
+    }
+    .content-section h2 {
+        font-size: 1.8em;
+    }
+    .feature-card {
+        padding: 30px;
+    }
+    .link-grid {
+        grid-template-columns: 1fr;
+    }
 }
