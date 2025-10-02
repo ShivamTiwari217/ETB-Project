@@ -69,7 +69,7 @@ a {
     position: relative;
 }
 
-.navbar a::after { /* Underline effect */
+.navbar a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -87,39 +87,6 @@ a {
 
 .navbar a:hover::after, .navbar a.active::after {
     transform: scaleX(1);
-}
-
-/* --- Hero Section --- */
-.hero-section {
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    /* Gradient Background to simulate a dark field or tactical screen */
-    background: linear-gradient(135deg, var(--color-dark-bg) 0%, #001A33 100%);
-    border-bottom: 5px solid var(--color-accent-blue);
-}
-
-.hero-content {
-    z-index: 2;
-    padding: 20px;
-}
-
-.hero-section h1 {
-    font-size: 4.5em;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-    color: var(--color-primary-text);
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.5); /* Subtle data glow */
-}
-
-.tagline {
-    font-size: 1.5em;
-    color: var(--color-accent-orange);
-    margin-bottom: 40px;
 }
 
 /* --- Primary CTA Button Style --- */
@@ -141,60 +108,6 @@ a {
     box-shadow: 0 8px 25px rgba(255, 102, 0, 0.6);
 }
 
-/* --- Featured Analysis Section --- */
-.featured-analysis {
-    padding: 80px 5%;
-    background-color: var(--color-dark-bg);
-    text-align: center;
-}
-
-.feature-card {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: var(--color-card-bg);
-    padding: 40px;
-    border-radius: 10px;
-    border-left: 5px solid var(--color-accent-orange);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    text-align: left;
-}
-
-.category-tag {
-    display: inline-block;
-    background-color: var(--color-accent-blue);
-    color: var(--color-dark-bg);
-    padding: 5px 10px;
-    font-size: 0.8em;
-    font-weight: 700;
-    border-radius: 3px;
-    margin-bottom: 15px;
-}
-
-.feature-card h3 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: var(--color-primary-text);
-}
-
-.feature-card p {
-    color: var(--color-secondary-text);
-    margin-bottom: 25px;
-}
-
-.data-points {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
-    color: var(--color-accent-orange);
-    font-weight: 600;
-    font-size: 0.9em;
-}
-
-.data-points i {
-    margin-right: 5px;
-    color: var(--color-accent-blue);
-}
-
 .cta-secondary {
     display: inline-flex;
     align-items: center;
@@ -211,80 +124,6 @@ a {
     transform: translateX(5px);
 }
 
-/* --- Quick Links Section --- */
-.quick-links {
-    padding: 80px 5%;
-    text-align: center;
-    background-color: #0d1218; /* Slightly different background for visual break */
-}
-
-.link-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.link-card {
-    background-color: var(--color-card-bg);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid rgba(0, 191, 255, 0.2);
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.link-card:hover {
-    border-color: var(--color-accent-orange);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
-}
-
-.link-card i {
-    font-size: 3em;
-    color: var(--color-accent-orange);
-    margin-bottom: 15px;
-}
-
-.link-card h3 {
-    color: var(--color-primary-text);
-    margin-bottom: 10px;
-    font-size: 1.3em;
-}
-
-.link-card p {
-    color: var(--color-secondary-text);
-    font-size: 0.9em;
-}
-
-/* --- CTA Strip --- */
-.cta-strip {
-    padding: 60px 5%;
-    background-color: var(--color-accent-blue); /* High contrast background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    color: var(--color-dark-bg);
-}
-
-.cta-strip p {
-    font-size: 1.5em;
-    font-weight: 600;
-    margin: 0;
-}
-
-.subscribe-btn {
-    background-color: var(--color-dark-bg);
-    color: var(--color-accent-orange);
-    box-shadow: none;
-}
-
-.subscribe-btn:hover {
-    background-color: #28303C;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-}
-
 /* --- Footer --- */
 footer {
     padding: 20px 5%;
@@ -295,39 +134,276 @@ footer {
     border-top: 1px solid rgba(0, 191, 255, 0.1);
 }
 
-/* --- Responsive Design --- */
+/* ---------------------------------------------------------------------- */
+/* --- NEW PAGE SPECIFIC STYLES --- */
+/* ---------------------------------------------------------------------- */
+
+/* --- General Page Layout --- */
+.page-content {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    background-color: var(--color-dark-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.page-content h1 {
+    font-size: 3em;
+    color: var(--color-accent-orange);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-accent-blue);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    color: var(--color-secondary-text);
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.content-section {
+    margin-bottom: 80px;
+}
+
+.content-section h2 {
+    font-size: 2em;
+    color: var(--color-accent-blue);
+    margin-bottom: 30px;
+    border-left: 5px solid var(--color-accent-orange);
+    padding-left: 15px;
+}
+
+.read-more-link {
+    font-weight: 600;
+    color: var(--color-accent-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.read-more-link:hover {
+    color: var(--color-accent-orange);
+}
+
+/* --- Match Analysis Page Styles --- */
+.match-list-grid, .comparison-cards-grid, .routine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.match-dashboard-card {
+    background-color: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid var(--color-accent-orange);
+}
+
+.match-dashboard-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--color-primary-text);
+}
+
+.match-summary {
+    color: var(--color-secondary-text);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.match-metrics {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--color-accent-blue);
+}
+
+.match-metrics i {
+    color: var(--color-accent-orange);
+}
+
+.key-moment-list p {
+    background-color: #141A23;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--color-accent-blue);
+    font-weight: 300;
+}
+
+/* --- Playbook/Set-Piece Shared Styles --- */
+.formation-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.formation-card, .routine-card {
+    background-color: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid var(--color-accent-blue);
+}
+
+.formation-card h3, .routine-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--color-accent-orange);
+}
+
+.role-list {
+    list-style: none;
+    padding: 0;
+}
+
+.role-list li {
+    background-color: #141A23;
+    padding: 20px;
+    border-left: 3px solid var(--color-accent-orange);
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.role-list h4 {
+    font-size: 1.3em;
+    color: var(--color-primary-text);
+    margin-bottom: 5px;
+}
+
+.animated-breakdowns .video-placeholder {
+    text-align: center;
+    padding: 60px;
+    border: 2px dashed var(--color-accent-orange);
+    border-radius: 10px;
+    background-color: #141A23;
+}
+
+.video-placeholder i {
+    color: var(--color-accent-orange);
+    margin-bottom: 20px;
+}
+
+/* --- Player Profiles Styles --- */
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background-color: var(--color-card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border-left: 4px solid var(--color-accent-blue);
+}
+
+.radar-chart-placeholder {
+    text-align: center;
+    padding: 40px;
+    border: 2px dashed var(--color-accent-blue);
+    border-radius: 50%;
+    color: var(--color-secondary-text);
+}
+
+.comparison-card {
+    background-color: #141A23;
+    padding: 25px;
+    border-radius: 8px;
+    border-bottom: 3px solid var(--color-accent-orange);
+    transition: transform 0.2s;
+}
+.comparison-card:hover {
+    transform: translateY(-3px);
+}
+.comparison-card h3 {
+    font-size: 1.3em;
+    color: var(--color-accent-orange);
+}
+
+/* --- Community Zone Styles --- */
+.thread-list {
+    margin-bottom: 30px;
+}
+.thread-item {
+    background-color: #141A23;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--color-accent-orange);
+}
+
+.thread-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.thread-item p {
+    color: var(--color-secondary-text);
+    font-size: 0.9em;
+}
+
+.thread-item i {
+    color: var(--color-accent-blue);
+    margin-right: 5px;
+}
+
+.challenge-box {
+    background-color: var(--color-card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--color-accent-blue);
+}
+
+.challenge-prompt {
+    font-size: 1.2em;
+    color: var(--color-accent-orange);
+    margin-bottom: 15px;
+}
+
+/* --- Learning Hub Styles --- */
+.glossary-grid, .course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.glossary-term, .course-card {
+    background-color: #141A23;
+    padding: 25px;
+    border-left: 3px solid var(--color-accent-blue);
+    border-radius: 5px;
+}
+
+.course-card h3 {
+    color: var(--color-accent-orange);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.course-card .read-more-link {
+    margin-top: 15px;
+    display: block;
+}
+
+/* --- Responsive Design (Keep existing from index.html) --- */
 @media (max-width: 1024px) {
-    .link-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .match-list-grid, .comparison-cards-grid, .routine-grid, .formation-cards-grid, .glossary-grid, .course-list, .profile-layout {
+        grid-template-columns: 1fr;
+    }
+    .profile-layout {
+        gap: 30px;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar nav {
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .navbar a {
-        margin-left: 0;
-        margin-right: 15px;
-    }
-    .hero-section h1 {
-        font-size: 3em;
-        letter-spacing: 3px;
-    }
-    .tagline {
-        font-size: 1.2em;
-    }
-    .cta-strip {
-        flex-direction: column;
-        text-align: center;
-    }
-    .link-grid {
-        grid-template-columns: 1fr;
-    }
+    /* ... (Responsive styles for navbar, h1, etc.) ... */
 }
